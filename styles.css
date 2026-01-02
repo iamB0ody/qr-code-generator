@@ -1,5 +1,274 @@
-#qrcode {
-  width: 160px;
-  height: 160px;
-  margin-top: 15px;
+/* ====================================
+   Neon Futuristic QR Code Generator
+   Custom CSS for effects & components
+   ==================================== */
+
+/* Glass Card Effect */
+.glass-card {
+  background: rgba(10, 10, 15, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 0, 255, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 0, 255, 0.2);
+}
+
+/* Neon Text Glow */
+.neon-text {
+  text-shadow:
+    0 0 10px rgba(255, 0, 255, 0.5),
+    0 0 20px rgba(255, 0, 255, 0.3),
+    0 0 40px rgba(255, 0, 255, 0.2);
+}
+
+/* Custom Range Slider */
+.neon-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+.neon-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #ff00ff, #a855f7);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff00ff, 0 0 20px rgba(255, 0, 255, 0.4);
+  transition: all 0.2s ease;
+}
+
+.neon-range::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ff00ff, 0 0 30px rgba(255, 0, 255, 0.6);
+}
+
+.neon-range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #ff00ff, #a855f7);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 10px #ff00ff, 0 0 20px rgba(255, 0, 255, 0.4);
+  transition: all 0.2s ease;
+}
+
+.neon-range::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ff00ff, 0 0 30px rgba(255, 0, 255, 0.6);
+}
+
+.neon-range::-moz-range-track {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+/* Color Picker */
+.neon-color-picker {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.neon-color-picker:hover {
+  border-color: #ff00ff;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.4);
+}
+
+.neon-color-picker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.neon-color-picker::-webkit-color-swatch {
+  border: none;
+  border-radius: 8px;
+}
+
+.neon-color-picker::-moz-color-swatch {
+  border: none;
+  border-radius: 8px;
+}
+
+/* Custom Toggle Switch */
+.neon-toggle {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.neon-toggle .toggle-track {
+  width: 52px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.neon-toggle .toggle-track::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  background: #666;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.neon-toggle input:checked + .toggle-track {
+  background: linear-gradient(135deg, #ff00ff, #a855f7);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+}
+
+.neon-toggle input:checked + .toggle-track::after {
+  transform: translateX(24px);
+  background: white;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Input Focus Glow */
+.neon-input:focus {
+  box-shadow:
+    0 0 0 2px rgba(255, 0, 255, 0.2),
+    0 0 20px rgba(255, 0, 255, 0.15);
+}
+
+/* Select Dropdown Styling */
+select option {
+  background: #0a0a0f;
+  color: white;
+  padding: 10px;
+}
+
+/* QR Preview Container */
+.qr-preview-wrapper {
+  min-width: 250px;
+  min-height: 250px;
+}
+
+/* Hidden Class */
+.hidden {
+  display: none !important;
+}
+
+/* Icon Preview Image */
+#icon-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ff00ff, #a855f7);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ff1493, #ff00ff);
+}
+
+/* Animations */
+@keyframes pulseNeon {
+  0%, 100% {
+    box-shadow: 0 0 5px #ff00ff, 0 0 20px rgba(255, 0, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 10px #ff00ff, 0 0 40px rgba(255, 0, 255, 0.6);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow:
+      0 0 10px rgba(255, 0, 255, 0.5),
+      0 0 20px rgba(255, 0, 255, 0.3);
+  }
+  to {
+    text-shadow:
+      0 0 15px rgba(255, 0, 255, 0.7),
+      0 0 30px rgba(255, 0, 255, 0.5),
+      0 0 45px rgba(255, 0, 255, 0.3);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .glass-card {
+    padding: 1rem;
+  }
+
+  .qr-preview-wrapper {
+    min-width: 200px;
+    min-height: 200px;
+  }
+}
+
+/* Button Hover Animation */
+#generate-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+#generate-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+#generate-btn:hover::before {
+  left: 100%;
+}
+
+/* Canvas styling when QR is generated */
+#qr-canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Delay utility for animations */
+.delay-1000 {
+  animation-delay: 1s;
 }
