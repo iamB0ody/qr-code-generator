@@ -11,17 +11,17 @@
           extend: {
             colors: {
               neon: {
-                pink: '#ff00ff',
-                hotpink: '#ff1493',
-                purple: '#a855f7',
-                dark: '#0a0a0f',
-                darker: '#050508',
+                pink: 'var(--color-primary)',
+                hotpink: 'var(--color-secondary)',
+                purple: 'var(--color-accent)',
+                dark: 'var(--color-bg-dark)',
+                darker: 'var(--color-bg-darker)',
               }
             },
             boxShadow: {
-              'neon': '0 0 5px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff',
-              'neon-sm': '0 0 5px #ff00ff, 0 0 10px #ff00ff',
-              'neon-lg': '0 0 10px #ff00ff, 0 0 30px #ff00ff, 0 0 60px #ff00ff',
+              'neon': 'var(--glow-primary)',
+              'neon-sm': 'var(--glow-primary-sm)',
+              'neon-lg': 'var(--glow-primary-lg)',
             },
             animation: {
               'pulse-neon': 'pulseNeon 2s ease-in-out infinite',

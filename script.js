@@ -120,6 +120,14 @@ class QRCodeGenerator {
           this.currentQRData = { text, qrDiv }
           this.placeholder.classList.add("hidden")
           document.getElementById("download-btn").disabled = false
+
+          // On mobile, scroll to preview section
+          if (window.innerWidth < 1024) {
+            const previewPanel = document.querySelector('.glass-card:last-of-type')
+            if (previewPanel) {
+              previewPanel.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }
+          }
         }
       }, 100)
     } catch (error) {
