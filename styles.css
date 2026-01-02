@@ -272,3 +272,74 @@ select option {
 .delay-1000 {
   animation-delay: 1s;
 }
+
+/* ====================================
+   RTL (Right-to-Left) Support
+   ==================================== */
+
+/* RTL body class */
+body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+body.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+/* RTL scrollbar positioning */
+body.rtl .scrollbar-thin {
+  padding-right: 0;
+  padding-left: 0.5rem;
+}
+
+/* RTL toggle switch */
+body.rtl .neon-toggle .toggle-track::after {
+  left: auto;
+  right: 3px;
+}
+
+body.rtl .neon-toggle input:checked + .toggle-track::after {
+  transform: translateX(-24px);
+}
+
+/* RTL icon flipping for directional icons */
+body.rtl .rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* RTL flex row reverse for specific elements */
+body.rtl .flex-row-reverse-rtl {
+  flex-direction: row-reverse;
+}
+
+/* RTL gradient direction */
+body.rtl .bg-gradient-to-r {
+  --tw-gradient-from: #a855f7;
+  --tw-gradient-to: #ff00ff;
+}
+
+/* ====================================
+   Language Switcher Styles
+   ==================================== */
+
+.lang-btn {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.lang-btn:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.lang-btn.active {
+  background: linear-gradient(135deg, #ff00ff, #a855f7);
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.4);
+}
+
+/* RTL Language switcher position */
+body.rtl .fixed.right-4 {
+  right: auto;
+  left: 1rem;
+}

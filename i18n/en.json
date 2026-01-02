@@ -1,0 +1,86 @@
+{
+  "app": {
+    "title": "QR Code Generator"
+  },
+  "header": {
+    "title": "QR Code Generator",
+    "subtitle": "Create stunning QR codes with custom colors, icons, and futuristic styling"
+  },
+  "controls": {
+    "heading": "Customize"
+  },
+  "input": {
+    "content": {
+      "label": "QR Code Content",
+      "placeholder": "Enter text, URL, or any content..."
+    },
+    "size": {
+      "label": "Size"
+    },
+    "foreground": {
+      "label": "Foreground"
+    },
+    "background": {
+      "label": "Background"
+    },
+    "errorCorrection": {
+      "label": "Error Correction",
+      "low": "Low (L)",
+      "medium": "Medium (M)",
+      "quartile": "Quartile (Q)",
+      "high": "High (H)"
+    },
+    "margin": {
+      "label": "Margin"
+    },
+    "icon": {
+      "label": "Add Icon (Optional)",
+      "uploadText": "Click to upload icon"
+    },
+    "iconSize": {
+      "label": "Icon Size"
+    },
+    "borderRadius": {
+      "label": "Corner Radius"
+    },
+    "borderStyle": {
+      "label": "Border Style",
+      "none": "None",
+      "solid": "Solid",
+      "dashed": "Dashed",
+      "dotted": "Dotted",
+      "double": "Double"
+    },
+    "borderWidth": {
+      "label": "Border Width"
+    },
+    "borderColor": {
+      "label": "Border Color"
+    },
+    "shadow": {
+      "label": "Add Shadow Effect"
+    }
+  },
+  "button": {
+    "generate": "Generate QR Code",
+    "download": "Download PNG"
+  },
+  "preview": {
+    "heading": "Preview",
+    "placeholder": {
+      "main": "Your QR code will appear here",
+      "instruction": "Enter content and click Generate"
+    }
+  },
+  "footer": {
+    "credit": "Built with modern web technologies"
+  },
+  "alert": {
+    "emptyContent": "Please enter some content for the QR code",
+    "generationError": "Error generating QR code. Please check your input."
+  },
+  "lang": {
+    "en": "EN",
+    "ar": "عربي"
+  }
+}

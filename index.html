@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,20 +33,34 @@
     </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="min-h-screen bg-gradient-to-br from-neon-darker via-neon-dark to-[#1a0a1a] text-gray-100">
+  <body class="min-h-screen bg-gradient-to-br from-neon-darker via-neon-dark to-[#1a0a1a] text-gray-100 ltr">
     <!-- Animated background particles -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none">
       <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-pink/10 rounded-full blur-3xl animate-pulse"></div>
       <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-purple/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
     </div>
 
+    <!-- Language Switcher -->
+    <div class="fixed top-4 right-4 z-50 flex gap-1 bg-black/50 backdrop-blur-md rounded-full p-1 border border-gray-700/50">
+      <button
+        data-lang-switch="en"
+        onclick="i18n.setLang('en')"
+        class="lang-btn px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 hover:bg-neon-pink/20"
+        data-i18n="lang.en">EN</button>
+      <button
+        data-lang-switch="ar"
+        onclick="i18n.setLang('ar')"
+        class="lang-btn px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 hover:bg-neon-pink/20"
+        data-i18n="lang.ar">عربي</button>
+    </div>
+
     <div class="relative z-10 container mx-auto px-4 py-8 max-w-7xl">
       <!-- Header -->
       <header class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-neon-pink via-neon-hotpink to-neon-purple bg-clip-text text-transparent drop-shadow-lg neon-text">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-neon-pink via-neon-hotpink to-neon-purple bg-clip-text text-transparent drop-shadow-lg neon-text" data-i18n="header.title">
           QR Code Generator
         </h1>
-        <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+        <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto" data-i18n="header.subtitle">
           Create stunning QR codes with custom colors, icons, and futuristic styling
         </p>
       </header>
@@ -56,19 +70,20 @@
         <!-- Controls Panel -->
         <div class="glass-card rounded-2xl p-6 md:p-8 flex flex-col max-h-[calc(100vh-180px)] lg:max-h-[calc(100vh-220px)]">
           <h2 class="text-xl font-semibold text-neon-pink mb-6 flex items-center gap-2 shrink-0">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 rtl-flip" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
             </svg>
-            Customize
+            <span data-i18n="controls.heading">Customize</span>
           </h2>
 
           <!-- Scrollable Form Area -->
           <div class="flex-1 overflow-y-auto space-y-6 pr-2 scrollbar-thin">
           <!-- QR Content -->
           <div class="space-y-2">
-            <label for="qr-text" class="block text-sm font-medium text-gray-300">QR Code Content</label>
+            <label for="qr-text" class="block text-sm font-medium text-gray-300" data-i18n="input.content.label">QR Code Content</label>
             <textarea
               id="qr-text"
+              data-i18n-placeholder="input.content.placeholder"
               placeholder="Enter text, URL, or any content..."
               class="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:border-neon-pink focus:ring-2 focus:ring-neon-pink/20 focus:outline-none transition-all duration-300 resize-none h-24 neon-input"
             >https://hogangnono.com</textarea>
@@ -77,7 +92,7 @@
           <!-- Size Slider -->
           <div class="space-y-2">
             <div class="flex justify-between items-center">
-              <label for="qr-size" class="text-sm font-medium text-gray-300">Size</label>
+              <label for="qr-size" class="text-sm font-medium text-gray-300" data-i18n="input.size.label">Size</label>
               <span id="size-value" class="text-neon-pink font-mono text-sm">400px</span>
             </div>
             <input type="range" id="qr-size" min="200" max="800" value="400" class="neon-range w-full" />
@@ -86,14 +101,14 @@
           <!-- Color Pickers -->
           <div class="grid grid-cols-2 gap-4">
             <div class="space-y-2">
-              <label for="foreground-color" class="block text-sm font-medium text-gray-300">Foreground</label>
+              <label for="foreground-color" class="block text-sm font-medium text-gray-300" data-i18n="input.foreground.label">Foreground</label>
               <div class="flex items-center gap-3">
                 <input type="color" id="foreground-color" value="#000000" class="neon-color-picker" />
                 <span class="text-gray-400 text-xs font-mono">#000000</span>
               </div>
             </div>
             <div class="space-y-2">
-              <label for="background-color" class="block text-sm font-medium text-gray-300">Background</label>
+              <label for="background-color" class="block text-sm font-medium text-gray-300" data-i18n="input.background.label">Background</label>
               <div class="flex items-center gap-3">
                 <input type="color" id="background-color" value="#ffffff" class="neon-color-picker" />
                 <span class="text-gray-400 text-xs font-mono">#ffffff</span>
@@ -104,17 +119,17 @@
           <!-- Error Correction & Margin -->
           <div class="grid grid-cols-2 gap-4">
             <div class="space-y-2">
-              <label for="error-correction" class="block text-sm font-medium text-gray-300">Error Correction</label>
+              <label for="error-correction" class="block text-sm font-medium text-gray-300" data-i18n="input.errorCorrection.label">Error Correction</label>
               <select id="error-correction" class="w-full px-4 py-2.5 bg-black/50 border border-gray-700 rounded-xl text-white focus:border-neon-pink focus:ring-2 focus:ring-neon-pink/20 focus:outline-none transition-all duration-300 neon-input">
-                <option value="L">Low (L)</option>
-                <option value="M" selected>Medium (M)</option>
-                <option value="Q">Quartile (Q)</option>
-                <option value="H">High (H)</option>
+                <option value="L" data-i18n="input.errorCorrection.low">Low (L)</option>
+                <option value="M" selected data-i18n="input.errorCorrection.medium">Medium (M)</option>
+                <option value="Q" data-i18n="input.errorCorrection.quartile">Quartile (Q)</option>
+                <option value="H" data-i18n="input.errorCorrection.high">High (H)</option>
               </select>
             </div>
             <div class="space-y-2">
               <div class="flex justify-between items-center">
-                <label for="margin" class="text-sm font-medium text-gray-300">Margin</label>
+                <label for="margin" class="text-sm font-medium text-gray-300" data-i18n="input.margin.label">Margin</label>
                 <span id="margin-value" class="text-neon-pink font-mono text-sm">4</span>
               </div>
               <input type="range" id="margin" min="0" max="20" value="4" class="neon-range w-full" />
@@ -123,11 +138,11 @@
 
           <!-- Icon Upload -->
           <div class="space-y-3">
-            <label for="icon-upload" class="block text-sm font-medium text-gray-300">Add Icon (Optional)</label>
+            <label for="icon-upload" class="block text-sm font-medium text-gray-300" data-i18n="input.icon.label">Add Icon (Optional)</label>
             <div class="flex items-center gap-4">
               <label class="flex-1 flex items-center justify-center px-4 py-3 bg-black/50 border border-dashed border-gray-600 rounded-xl cursor-pointer hover:border-neon-pink hover:bg-neon-pink/5 transition-all duration-300">
                 <input type="file" id="icon-upload" accept="image/*" class="hidden" />
-                <span class="text-gray-400 text-sm">Click to upload icon</span>
+                <span class="text-gray-400 text-sm" data-i18n="input.icon.uploadText">Click to upload icon</span>
               </label>
               <div id="icon-preview" class="w-12 h-12 rounded-lg bg-black/50 border border-gray-700 flex items-center justify-center overflow-hidden"></div>
             </div>
@@ -137,14 +152,14 @@
           <div class="grid grid-cols-2 gap-4">
             <div class="space-y-2">
               <div class="flex justify-between items-center">
-                <label for="icon-size" class="text-sm font-medium text-gray-300">Icon Size</label>
+                <label for="icon-size" class="text-sm font-medium text-gray-300" data-i18n="input.iconSize.label">Icon Size</label>
                 <span id="icon-size-value" class="text-neon-pink font-mono text-sm">40%</span>
               </div>
               <input type="range" id="icon-size" min="20" max="100" value="40" class="neon-range w-full" />
             </div>
             <div class="space-y-2">
               <div class="flex justify-between items-center">
-                <label for="border-radius" class="text-sm font-medium text-gray-300">Corner Radius</label>
+                <label for="border-radius" class="text-sm font-medium text-gray-300" data-i18n="input.borderRadius.label">Corner Radius</label>
                 <span id="border-radius-value" class="text-neon-pink font-mono text-sm">0px</span>
               </div>
               <input type="range" id="border-radius" min="0" max="50" value="0" class="neon-range w-full" />
@@ -153,13 +168,13 @@
 
           <!-- Border Style -->
           <div class="space-y-2">
-            <label for="border-style" class="block text-sm font-medium text-gray-300">Border Style</label>
+            <label for="border-style" class="block text-sm font-medium text-gray-300" data-i18n="input.borderStyle.label">Border Style</label>
             <select id="border-style" class="w-full px-4 py-2.5 bg-black/50 border border-gray-700 rounded-xl text-white focus:border-neon-pink focus:ring-2 focus:ring-neon-pink/20 focus:outline-none transition-all duration-300 neon-input">
-              <option value="none">None</option>
-              <option value="solid">Solid</option>
-              <option value="dashed">Dashed</option>
-              <option value="dotted">Dotted</option>
-              <option value="double">Double</option>
+              <option value="none" data-i18n="input.borderStyle.none">None</option>
+              <option value="solid" data-i18n="input.borderStyle.solid">Solid</option>
+              <option value="dashed" data-i18n="input.borderStyle.dashed">Dashed</option>
+              <option value="dotted" data-i18n="input.borderStyle.dotted">Dotted</option>
+              <option value="double" data-i18n="input.borderStyle.double">Double</option>
             </select>
           </div>
 
@@ -167,13 +182,13 @@
           <div class="grid grid-cols-2 gap-4">
             <div class="space-y-2">
               <div class="flex justify-between items-center">
-                <label for="border-width" class="text-sm font-medium text-gray-300">Border Width</label>
+                <label for="border-width" class="text-sm font-medium text-gray-300" data-i18n="input.borderWidth.label">Border Width</label>
                 <span id="border-width-value" class="text-neon-pink font-mono text-sm">0px</span>
               </div>
               <input type="range" id="border-width" min="0" max="20" value="0" class="neon-range w-full" />
             </div>
             <div class="space-y-2">
-              <label for="border-color" class="block text-sm font-medium text-gray-300">Border Color</label>
+              <label for="border-color" class="block text-sm font-medium text-gray-300" data-i18n="input.borderColor.label">Border Color</label>
               <div class="flex items-center gap-3">
                 <input type="color" id="border-color" value="#000000" class="neon-color-picker" />
                 <span class="text-gray-400 text-xs font-mono">#000000</span>
@@ -183,7 +198,7 @@
 
           <!-- Shadow Toggle -->
           <div class="flex items-center justify-between p-4 bg-black/30 rounded-xl border border-gray-700/50">
-            <label for="shadow" class="text-sm font-medium text-gray-300">Add Shadow Effect</label>
+            <label for="shadow" class="text-sm font-medium text-gray-300" data-i18n="input.shadow.label">Add Shadow Effect</label>
             <label class="neon-toggle">
               <input type="checkbox" id="shadow" class="sr-only" />
               <div class="toggle-track"></div>
@@ -193,10 +208,10 @@
 
           <!-- Sticky Action Buttons -->
           <div class="flex flex-col sm:flex-row gap-4 pt-4 mt-4 border-t border-gray-700/50 shrink-0 bg-transparent">
-            <button id="generate-btn" class="flex-1 px-6 py-3.5 bg-gradient-to-r from-neon-pink to-neon-purple text-white font-semibold rounded-xl hover:shadow-neon transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+            <button id="generate-btn" class="flex-1 px-6 py-3.5 bg-gradient-to-r from-neon-pink to-neon-purple text-white font-semibold rounded-xl hover:shadow-neon transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]" data-i18n="button.generate">
               Generate QR Code
             </button>
-            <button id="download-btn" class="flex-1 px-6 py-3.5 bg-black/50 border border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-neon-pink hover:text-neon-pink disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-gray-600 disabled:hover:text-gray-300 transition-all duration-300" disabled>
+            <button id="download-btn" class="flex-1 px-6 py-3.5 bg-black/50 border border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-neon-pink hover:text-neon-pink disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-gray-600 disabled:hover:text-gray-300 transition-all duration-300" disabled data-i18n="button.download">
               Download PNG
             </button>
           </div>
@@ -209,7 +224,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
             </svg>
-            Preview
+            <span data-i18n="preview.heading">Preview</span>
           </h2>
 
           <div class="flex-1 flex items-center justify-center min-h-[400px]">
@@ -221,8 +236,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path>
                   </svg>
                 </div>
-                <p class="text-gray-500 text-lg font-medium">Your QR code will appear here</p>
-                <p class="text-gray-600 text-sm mt-2">Enter content and click Generate</p>
+                <p class="text-gray-500 text-lg font-medium" data-i18n="preview.placeholder.main">Your QR code will appear here</p>
+                <p class="text-gray-600 text-sm mt-2" data-i18n="preview.placeholder.instruction">Enter content and click Generate</p>
               </div>
             </div>
           </div>
@@ -231,12 +246,13 @@
 
       <!-- Footer -->
       <footer class="text-center mt-12 text-gray-600 text-sm">
-        <p>Built with modern web technologies</p>
+        <p data-i18n="footer.credit">Built with modern web technologies</p>
       </footer>
     </div>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

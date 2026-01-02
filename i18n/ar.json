@@ -1,0 +1,86 @@
+{
+  "app": {
+    "title": "صانع كود QR"
+  },
+  "header": {
+    "title": "صانع كود QR",
+    "subtitle": "اعمل أكواد QR مميزة بألوان وأيقونات وتصميمات حلوة"
+  },
+  "controls": {
+    "heading": "التخصيص"
+  },
+  "input": {
+    "content": {
+      "label": "محتوى الكود",
+      "placeholder": "اكتب نص أو لينك أو أي حاجة..."
+    },
+    "size": {
+      "label": "الحجم"
+    },
+    "foreground": {
+      "label": "لون الكود"
+    },
+    "background": {
+      "label": "لون الخلفية"
+    },
+    "errorCorrection": {
+      "label": "تصحيح الأخطاء",
+      "low": "قليل (L)",
+      "medium": "متوسط (M)",
+      "quartile": "عالي (Q)",
+      "high": "أعلى (H)"
+    },
+    "margin": {
+      "label": "الهامش"
+    },
+    "icon": {
+      "label": "إضافة أيقونة (اختياري)",
+      "uploadText": "اضغط هنا لرفع أيقونة"
+    },
+    "iconSize": {
+      "label": "حجم الأيقونة"
+    },
+    "borderRadius": {
+      "label": "استدارة الحواف"
+    },
+    "borderStyle": {
+      "label": "شكل الإطار",
+      "none": "بدون",
+      "solid": "خط متصل",
+      "dashed": "خط متقطع",
+      "dotted": "نقط",
+      "double": "خط مزدوج"
+    },
+    "borderWidth": {
+      "label": "سمك الإطار"
+    },
+    "borderColor": {
+      "label": "لون الإطار"
+    },
+    "shadow": {
+      "label": "إضافة ظل"
+    }
+  },
+  "button": {
+    "generate": "إنشاء الكود",
+    "download": "تحميل PNG"
+  },
+  "preview": {
+    "heading": "المعاينة",
+    "placeholder": {
+      "main": "الكود هيظهر هنا",
+      "instruction": "اكتب المحتوى واضغط إنشاء"
+    }
+  },
+  "footer": {
+    "credit": "مبني بأحدث تقنيات الويب"
+  },
+  "alert": {
+    "emptyContent": "لازم تكتب حاجة في الكود الأول",
+    "generationError": "في مشكلة في إنشاء الكود. راجع اللي كتبته."
+  },
+  "lang": {
+    "en": "EN",
+    "ar": "عربي"
+  }
+}

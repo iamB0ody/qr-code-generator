@@ -95,7 +95,7 @@ class QRCodeGenerator {
   async generateQRCode() {
     const text = document.getElementById("qr-text").value.trim()
     if (!text) {
-      alert("Please enter some content for the QR code")
+      alert(window.i18n ? window.i18n.t("alert.emptyContent") : "Please enter some content for the QR code")
       return
     }
 
@@ -124,7 +124,7 @@ class QRCodeGenerator {
       }, 100)
     } catch (error) {
       console.error("Error generating QR code:", error)
-      alert("Error generating QR code. Please check your input.")
+      alert(window.i18n ? window.i18n.t("alert.generationError") : "Error generating QR code. Please check your input.")
     }
   }
 
