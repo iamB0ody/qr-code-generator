@@ -6,7 +6,7 @@
   'use strict';
 
   const SUPPORTED_LANGS = ['en', 'ar'];
-  const DEFAULT_LANG = 'en';
+  const DEFAULT_LANG = 'ar';
   const STORAGE_KEY = 'lang';
   const RTL_LANGS = ['ar'];
 
