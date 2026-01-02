@@ -54,14 +54,16 @@
       <!-- Main Content -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <!-- Controls Panel -->
-        <div class="glass-card rounded-2xl p-6 md:p-8 space-y-6">
-          <h2 class="text-xl font-semibold text-neon-pink mb-6 flex items-center gap-2">
+        <div class="glass-card rounded-2xl p-6 md:p-8 flex flex-col max-h-[calc(100vh-180px)] lg:max-h-[calc(100vh-220px)]">
+          <h2 class="text-xl font-semibold text-neon-pink mb-6 flex items-center gap-2 shrink-0">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
             </svg>
             Customize
           </h2>
 
+          <!-- Scrollable Form Area -->
+          <div class="flex-1 overflow-y-auto space-y-6 pr-2 scrollbar-thin">
           <!-- QR Content -->
           <div class="space-y-2">
             <label for="qr-text" class="block text-sm font-medium text-gray-300">QR Code Content</label>
@@ -187,9 +189,10 @@
               <div class="toggle-track"></div>
             </label>
           </div>
+          </div><!-- End Scrollable Form Area -->
 
-          <!-- Action Buttons -->
-          <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <!-- Sticky Action Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 pt-4 mt-4 border-t border-gray-700/50 shrink-0 bg-transparent">
             <button id="generate-btn" class="flex-1 px-6 py-3.5 bg-gradient-to-r from-neon-pink to-neon-purple text-white font-semibold rounded-xl hover:shadow-neon transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
               Generate QR Code
             </button>
